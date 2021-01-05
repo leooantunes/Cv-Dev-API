@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace api_cv.Entidades
+﻿namespace api_cv.Entidades
 {
     public partial class Redesocial
     {

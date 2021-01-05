@@ -63,7 +63,7 @@ namespace api_cv
             {
                 x.UseMySQL(Configuration.GetConnectionString("MySQL"));
             });
-            // Injetando repositorios
+            //// Injetando repositorios
             services.AddScoped<ITipoSkillRepository, TipoSkillRepository>();
             services.AddScoped<ISkillRepository, SkillRepository>();
             services.AddScoped<IExperienciaRepository, ExperienciaRepository>();

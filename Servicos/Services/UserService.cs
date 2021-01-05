@@ -40,7 +40,7 @@ namespace Servicos.Services
 
         public DtoUser ObterUsuarioLoginSenha(string login, string senha)
         {
-            return _userRepository.ObterUsuarioLoginSenha(login,senha);
+            return _userRepository.ObterUsuarioLoginSenha(login, senha);
         }
     }
 }

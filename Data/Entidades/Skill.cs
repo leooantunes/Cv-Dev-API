@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Data.Entidades
+﻿namespace Data.Entidades
 {
     public partial class Skill
     {

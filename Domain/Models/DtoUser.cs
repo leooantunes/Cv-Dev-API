@@ -9,7 +9,7 @@ namespace Domain.Models
         public string Nome { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        public DateTime Idade { get; set; }
+        public DateTime? Idade { get; set; }
         public string Cargo { get; set; }
         public string Descricao { get; set; }
 
