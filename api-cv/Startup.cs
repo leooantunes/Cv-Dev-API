@@ -59,10 +59,12 @@ namespace api_cv
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "api_cv", Version = "v1" });
             });
+
             services.AddDbContext<ContextDB>(x =>
             {
                 x.UseMySQL(Configuration.GetConnectionString("MySQL"));
             });
+
             //// Injetando repositorios
             services.AddScoped<ITipoSkillRepository, TipoSkillRepository>();
             services.AddScoped<ISkillRepository, SkillRepository>();

@@ -17,30 +17,20 @@ namespace api_cv.Controllers
         }
         // GET: api/<ExperienciaController>
         [HttpGet]
-        public IActionResult Get()
-        {
-            return Ok(_experienciaService.ObterTodos());
-        }
+        public IActionResult Get() => Ok(_experienciaService.ObterTodos());
 
         // GET api/<ExperienciaController>/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
-        {
-            return Ok(_experienciaService.ObterPorId(id));
-        }
+        public IActionResult Get(int id) => Ok(_experienciaService.ObterPorId(id));
 
         // POST api/<ExperienciaController>
         [HttpPost]
         public IActionResult Post([FromBody] DtoExperiencia experiencia)
         {
             if (_experienciaService.Inserir(experiencia))
-            {
                 return Ok();
-            }
             else
-            {
                 return BadRequest();
-            }
         }
 
         // PUT api/<ExperienciaController>/5
@@ -48,13 +38,9 @@ namespace api_cv.Controllers
         public IActionResult Put([FromBody] DtoExperiencia experiencia)
         {
             if (_experienciaService.Atualizar(experiencia))
-            {
                 return Ok();
-            }
             else
-            {
                 return BadRequest();
-            }
         }
 
         // DELETE api/<ExperienciaController>/5
@@ -62,13 +48,9 @@ namespace api_cv.Controllers
         public IActionResult Delete(int id)
         {
             if (_experienciaService.Excluir(id))
-            {
                 return Ok();
-            }
             else
-            {
                 return BadRequest();
-            }
         }
     }
 }

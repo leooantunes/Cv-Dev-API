@@ -47,6 +47,7 @@ namespace api_cv.Controllers
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
+                    new Claim(ClaimTypes.SerialNumber, user.IdUser.ToString()),
                     new Claim(ClaimTypes.Name, user.UserName.ToString()),
                 }),
                 Expires = DateTime.UtcNow.AddDays(1),

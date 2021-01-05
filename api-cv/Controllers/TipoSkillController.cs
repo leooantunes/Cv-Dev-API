@@ -17,30 +17,20 @@ namespace api_cv.Controllers
         }
         // GET: api/<TipoSkillController>
         [HttpGet]
-        public IActionResult Get()
-        {
-            return Ok(_tipoSkillService.ObterTodos());
-        }
+        public IActionResult Get() => Ok(_tipoSkillService.ObterTodos());
 
         // GET api/<TipoSkillController>/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
-        {
-            return Ok(_tipoSkillService.ObterPorId(id));
-        }
+        public IActionResult Get(int id) => Ok(_tipoSkillService.ObterPorId(id));
 
         // POST api/<TipoSkillController>
         [HttpPost]
         public IActionResult Post([FromBody] DtoTipoSkill tipoSkill)
         {
             if (_tipoSkillService.Inserir(tipoSkill))
-            {
                 return Ok();
-            }
             else
-            {
                 return BadRequest();
-            }
         }
 
         // PUT api/<TipoSkillController>/5
@@ -48,13 +38,9 @@ namespace api_cv.Controllers
         public IActionResult Put([FromBody] DtoTipoSkill tipoSkill)
         {
             if (_tipoSkillService.Atualizar(tipoSkill))
-            {
                 return Ok();
-            }
             else
-            {
                 return BadRequest();
-            }
         }
 
         // DELETE api/<TipoSkillController>/5
@@ -62,13 +48,9 @@ namespace api_cv.Controllers
         public IActionResult Delete(int id)
         {
             if (_tipoSkillService.Excluir(id))
-            {
                 return Ok();
-            }
             else
-            {
                 return BadRequest();
-            }
         }
     }
 }

@@ -18,30 +18,20 @@ namespace api_cv.Controllers
 
         // GET: api/<SkillController>
         [HttpGet]
-        public IActionResult Get()
-        {
-            return Ok(_skillService.ObterTodos());
-        }
+        public IActionResult Get() => Ok(_skillService.ObterTodos());
 
         // GET api/<SkillController>/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
-        {
-            return Ok(_skillService.ObterPorId(id));
-        }
+        public IActionResult Get(int id) => Ok(_skillService.ObterPorId(id));
 
         // POST api/<SkillController>
         [HttpPost]
         public IActionResult Post([FromBody] DtoSkill skill)
         {
             if (_skillService.Inserir(skill))
-            {
                 return Ok();
-            }
             else
-            {
                 return BadRequest();
-            }
         }
 
         // PUT api/<SkillController>/5
@@ -49,13 +39,9 @@ namespace api_cv.Controllers
         public IActionResult Put([FromBody] DtoSkill skill)
         {
             if (_skillService.Atualizar(skill))
-            {
                 return Ok();
-            }
             else
-            {
                 return BadRequest();
-            }
         }
 
         // DELETE api/<SkillController>/5
@@ -63,13 +49,9 @@ namespace api_cv.Controllers
         public IActionResult Delete(int id)
         {
             if (_skillService.Excluir(id))
-            {
                 return Ok();
-            }
             else
-            {
                 return BadRequest();
-            }
         }
     }
 }

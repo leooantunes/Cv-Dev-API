@@ -27,16 +27,13 @@ namespace api_cv.Controllers
 
         // POST api/User
         [HttpPost]
+        [AllowAnonymous]
         public IActionResult Post([FromBody] DtoUser user)
         {
             if (_userService.Inserir(user))
-            {
                 return Ok();
-            }
             else
-            {
                 return BadRequest();
-            }
         }
 
         // PUT api/<UserController>/5
@@ -44,13 +41,9 @@ namespace api_cv.Controllers
         public IActionResult Put([FromBody] DtoUser user)
         {
             if (_userService.Atualizar(user))
-            {
                 return Ok();
-            }
             else
-            {
                 return BadRequest();
-            }
         }
 
         // DELETE api/<UserController>/5
@@ -58,13 +51,9 @@ namespace api_cv.Controllers
         public IActionResult Delete(int id)
         {
             if (_userService.Excluir(id))
-            {
                 return Ok();
-            }
             else
-            {
                 return BadRequest();
-            }
         }
     }
 }

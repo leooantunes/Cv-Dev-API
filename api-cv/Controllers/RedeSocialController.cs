@@ -17,30 +17,20 @@ namespace api_cv.Controllers
         }
         // GET: api/<RedeSocialController>
         [HttpGet]
-        public IActionResult Get()
-        {
-            return Ok(_redeSocialService.ObterTodos());
-        }
+        public IActionResult Get() => Ok(_redeSocialService.ObterTodos());
 
         // GET api/<RedeSocialController>/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
-        {
-            return Ok(_redeSocialService.ObterPorId(id));
-        }
+        public IActionResult Get(int id) => Ok(_redeSocialService.ObterPorId(id));
 
         // POST api/<RedeSocialController>
         [HttpPost]
         public IActionResult Post([FromBody] DtoRedeSocial redeSocial)
         {
             if (_redeSocialService.Inserir(redeSocial))
-            {
                 return Ok();
-            }
             else
-            {
                 return BadRequest();
-            }
         }
 
         // PUT api/<RedeSocialController>/5
@@ -48,13 +38,9 @@ namespace api_cv.Controllers
         public IActionResult Put([FromBody] DtoRedeSocial redeSocial)
         {
             if (_redeSocialService.Atualizar(redeSocial))
-            {
                 return Ok();
-            }
             else
-            {
                 return BadRequest();
-            }
         }
 
         // DELETE api/<RedeSocialController>/5
@@ -62,13 +48,9 @@ namespace api_cv.Controllers
         public IActionResult Delete(int id)
         {
             if (_redeSocialService.Excluir(id))
-            {
                 return Ok();
-            }
             else
-            {
                 return BadRequest();
-            }
         }
     }
 }
